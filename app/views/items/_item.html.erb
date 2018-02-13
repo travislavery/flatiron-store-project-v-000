@@ -1,0 +1,5 @@
+<p><%= link_to item.title, item_path(item) %></p>
+<p>Price: <%= "$#{item.price.to_f/100}" %></p>
+<% if user_signed_in? %>
+	<%= button_to "Add to Cart", line_items_path, {params: { item_id: item.id }} %>
+<%end%>

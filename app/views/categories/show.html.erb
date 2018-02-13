@@ -2,6 +2,9 @@
 
 <ul>
 <% @category.items.each do |item| %>
-    <li><%= link_to item.title, item_path(item) %></li>
+    <li>
+    	<%= render partial: 'items/item', locals: {item: item} %>
+    </li>
+
 <% end %>
 </ul>
